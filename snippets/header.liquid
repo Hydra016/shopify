@@ -1,0 +1,23 @@
+<header>
+    {% render 'sale-strip' %}
+    <nav class="main navbar">
+    <span class="logo">
+        Exclusive
+    </span>
+    <div>
+        {% for link in linklists.main-menu.links -%}
+            <span class="nav-link">{{ link.title | link_to: link.url }}</span>
+          {%- endfor %}
+    </div>
+    <div class="items-container">
+        <form action="/search" class="search-container">
+    <input type="search" name="q" placeholder="What are you looking for" class="search input">
+    <button class="btn" type="submit"><i class="fas fa-magnifying-glass"></i></button>
+  </form>
+  <i class="fa-regular fa-heart icon"></i>
+  <a href="{{ routes.cart_url }}">  <i class="fa-solid fa-cart-shopping icon">
+    </i>  
+  </a>
+    </div>
+    </nav>
+</header>
